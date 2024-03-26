@@ -9,26 +9,56 @@
 
 
 .title{
-    border:red solid 2px;
+    /* border:red solid 2px; */
     text-align: center;
 }
 
-.video_container{
-    border: 2px solid red;
+.cards_container{
+    /* border: 2px solid red; */
+    width:90%;
+    margin: 0 auto;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card{
+    width: 20%;
+    margin: 1rem 0;
+    padding: 1em;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #eee;
+
+}
+.video {
+    display:none;
 }
 
 .index{
     text-align: center;
 }
 
-.video{
-    border:2px solid blue;
-    width:80%;
-    margin:0 auto;
+.bannerImage{
+    width: 40%;
+    max-height: 20rem;
 }
 
 .controls{
-    border: 2px solid green;
+    margin: 1rem 0;
+    /* border: 2px solid green; */
     display:flex;
-    justify-content: space-around;
+    justify-content: space-around; 
 }
+
+.controls .button{
+    background: #eee;
+    border-radius: 4px;
+}
+
+.button{
+    
+}
+
+

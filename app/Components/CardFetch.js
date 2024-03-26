@@ -3,21 +3,19 @@
 import React, { useEffect, useState } from 'react';
 import axiosInstance from './axiosInstance';
 
-function Fetch({ onUrlsUpdate }) {
-  const [data, setData] = useState([]);
+function CardFetch({url, onFetchData }) {
 
-  
 
   const fetchData = async () => {
     try {
-      const response = await axiosInstance.get("https://api.audioshots.app/audio");
+      const response = await axiosInstance.get(url);
         
       if (!response.statusCode==200) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
       console.log(response.data);
-      setData(response.data);
-      onUrlsUpdate(data);
+
+      onFetchData(response.data);
 
 
     } catch (error) {
@@ -27,7 +25,7 @@ function Fetch({ onUrlsUpdate }) {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [url]);
 
   return (
     <div>
@@ -36,4 +34,4 @@ function Fetch({ onUrlsUpdate }) {
   );
 }
 
-export default Fetch;
+export default CardFetch;
